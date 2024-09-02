@@ -2,3 +2,5 @@ utils
 pandas
 streamlit
 langchain-openai
+langchain 
+langchain-experimental
