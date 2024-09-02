@@ -1,7 +1,11 @@
+from utils import dataframe_agent
 import streamlit as st
 import pandas as pd
+import sys
 
-from utils import dataframe_agent
+import os
+sys.path.append(os.path.abspath(
+    os.path.join(os.path.dirname(__file__), 'utils')))
 
 
 def create_chart(input_data, chart_type):
