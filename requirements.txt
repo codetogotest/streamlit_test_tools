@@ -4,3 +4,4 @@ streamlit
 langchain-openai
 langchain 
 langchain-experimental
+dotenv
