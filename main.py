@@ -14,7 +14,7 @@ def create_chart(input_data, chart_type):
         st.scatter_chart(df_data)
 
 
-st.title("💡 CSV數據分析智能工具")
+st.title("💡 CSV數據分析AI工具")
 
 with st.sidebar:
     openai_api_key = st.text_input("請輸入OpenAI API密鑰：", type="password")
