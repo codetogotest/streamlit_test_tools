@@ -1,6 +1,5 @@
-import streamlit as st
 import pandas as pd
-
+import streamlit as st
 from utils import dataframe_agent
 
 
@@ -15,7 +14,7 @@ def create_chart(input_data, chart_type):
         st.scatter_chart(df_data)
 
 
-st.title("💡 CSV數據分析生成工具")
+st.title("💡 CSV數據分析智能工具")
 
 with st.sidebar:
     openai_api_key = st.text_input("請輸入OpenAI API密鑰：", type="password")
@@ -28,7 +27,7 @@ if data:
     with st.expander("原始數據"):
         st.dataframe(st.session_state["df"])
 
-query = st.text_area("請輸入你關於以上表格的問題，或數據提取請求，或視覺化要求（支援散點圖、折線圖、條形圖等）：")
+query = st.text_area("請輸入你關於以上表格的問題，或數據提取請求，或可視化要求（支持散點圖、折線圖、長條圖）：")
 button = st.button("生成回答")
 
 if button and not openai_api_key:
@@ -40,7 +39,7 @@ if button and openai_api_key and "df" in st.session_state:
         response_dict = dataframe_agent(
             openai_api_key, st.session_state["df"], query)
         if "answer" in response_dict:
-            st.write(response_dict["answer"])
+            st.write("AI 回答:", response_dict["answer"])
         if "table" in response_dict:
             st.table(pd.DataFrame(response_dict["table"]["data"],
                                   columns=response_dict["table"]["columns"]))
