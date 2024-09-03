@@ -39,7 +39,7 @@ if button and openai_api_key and "df" in st.session_state:
         response_dict = dataframe_agent(
             openai_api_key, st.session_state["df"], query)
         if "answer" in response_dict:
-            st.write("💬AI response:", response_dict["answer"])
+            st.write("AI response 💬 :", response_dict["answer"])
         if "table" in response_dict:
             st.table(pd.DataFrame(response_dict["table"]["data"],
                                   columns=response_dict["table"]["columns"]))
