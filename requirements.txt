@@ -6,3 +6,4 @@ langchain
 langchain-experimental
 langchain-community
 langchain_experimental
+tabulate
