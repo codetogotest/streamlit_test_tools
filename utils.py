@@ -1,7 +1,7 @@
 import json
-import pandas as pd
 from langchain_openai import ChatOpenAI
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
+from langchain_experimental.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 
 
 PROMPT_TEMPLATE = """
